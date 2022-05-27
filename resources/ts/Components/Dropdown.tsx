@@ -2,11 +2,13 @@ import React, { useState, useContext, Dispatch, SetStateAction } from 'react'
 import { Link } from '@inertiajs/inertia-react'
 import { Transition } from '@headlessui/react'
 
-const DropDownContext = React.createContext({} as {
-  open: boolean
-  setOpen: Dispatch<SetStateAction<boolean>>
-  toggleOpen: () => void
-})
+const DropDownContext = React.createContext(
+  {} as {
+    open: boolean
+    setOpen: Dispatch<SetStateAction<boolean>>
+    toggleOpen: () => void
+  },
+)
 
 const Dropdown = ({ children }) => {
   const [open, setOpen] = useState(false)

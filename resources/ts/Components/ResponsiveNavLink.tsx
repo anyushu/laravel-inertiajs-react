@@ -1,13 +1,7 @@
 import React from 'react'
 import { Link } from '@inertiajs/inertia-react'
 
-const ResponsiveNavLink =({
-  method = 'get',
-  as = 'a',
-  href,
-  active = false,
-  children,
-}) => {
+const ResponsiveNavLink = ({ method = 'get', as = 'a', href, active = false, children }) => {
   return (
     <Link
       method={method}

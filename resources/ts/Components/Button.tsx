@@ -1,8 +1,8 @@
 import React, { ButtonHTMLAttributes, ReactNode } from 'react'
 
 type ButtonProps = {
-  type?: "button" | "submit" | "reset"
-  className?:string
+  type?: 'button' | 'submit' | 'reset'
+  className?: string
   processing?: boolean
   children?: ReactNode
 }
