@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from '@inertiajs/inertia-react'
 
-export default function ResponsiveNavLink({
+const ResponsiveNavLink =({
   method = 'get',
   as = 'a',
   href,
   active = false,
   children,
-}) {
+}) => {
   return (
     <Link
       method={method}
@@ -23,3 +23,5 @@ export default function ResponsiveNavLink({
     </Link>
   )
 }
+
+export default ResponsiveNavLink

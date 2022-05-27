@@ -5,8 +5,9 @@ import Input from '@/Components/Input'
 import Label from '@/Components/Label'
 import ValidationErrors from '@/Components/ValidationErrors'
 import { Head, Link, useForm } from '@inertiajs/inertia-react'
+import route from 'ziggy-js'
 
-export default function Register() {
+const Register = () => {
   const { data, setData, post, processing, errors, reset } = useForm({
     name: '',
     email: '',
@@ -49,7 +50,6 @@ export default function Register() {
             value={data.name}
             className="mt-1 block w-full"
             autoComplete="name"
-            isFocused={true}
             handleChange={onHandleChange}
             required
           />
@@ -65,7 +65,7 @@ export default function Register() {
             className="mt-1 block w-full"
             autoComplete="username"
             handleChange={onHandleChange}
-            required
+            required={true}
           />
         </div>
 
@@ -79,7 +79,7 @@ export default function Register() {
             className="mt-1 block w-full"
             autoComplete="new-password"
             handleChange={onHandleChange}
-            required
+            required={true}
           />
         </div>
 
@@ -92,7 +92,8 @@ export default function Register() {
             value={data.password_confirmation}
             className="mt-1 block w-full"
             handleChange={onHandleChange}
-            required
+            autoComplete=""
+            required={true}
           />
         </div>
 
@@ -112,3 +113,5 @@ export default function Register() {
     </Guest>
   )
 }
+
+export default Register

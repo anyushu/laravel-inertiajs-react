@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
+import route from 'ziggy-js'
 import ApplicationLogo from '@/Components/ApplicationLogo'
 import Dropdown from '@/Components/Dropdown'
 import NavLink from '@/Components/NavLink'
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink'
 import { Link } from '@inertiajs/inertia-react'
 
-export default function Authenticated({ auth, header, children }) {
+const Authenticated = ({ auth, header, children }) => {
   const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false)
 
   return (
@@ -121,3 +122,5 @@ export default function Authenticated({ auth, header, children }) {
     </div>
   )
 }
+
+export default Authenticated
