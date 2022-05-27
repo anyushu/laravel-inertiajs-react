@@ -1,8 +1,8 @@
+import { Head, Link, useForm } from '@inertiajs/inertia-react'
 import React from 'react'
+import route from 'ziggy-js'
 import Button from '@/Components/Button'
 import Guest from '@/Layouts/Guest'
-import { Head, Link, useForm } from '@inertiajs/inertia-react'
-import route from 'ziggy-js'
 
 const VerifyEmail = ({ status }) => {
   const { post, processing } = useForm()
@@ -24,21 +24,21 @@ const VerifyEmail = ({ status }) => {
       </div>
 
       {status === 'verification-link-sent' && (
-        <div className="mb-4 font-medium text-sm text-green-600">
+        <div className="mb-4 text-sm font-medium text-green-600">
           A new verification link has been sent to the email address you provided during
           registration.
         </div>
       )}
 
       <form onSubmit={submit}>
-        <div className="mt-4 flex items-center justify-between">
+        <div className="flex justify-between items-center mt-4">
           <Button processing={processing}>Resend Verification Email</Button>
 
           <Link
             href={route('logout')}
             method="post"
             as="button"
-            className="underline text-sm text-gray-600 hover:text-gray-900"
+            className="text-sm text-gray-600 hover:text-gray-900 underline"
           >
             Log Out
           </Link>

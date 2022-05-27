@@ -1,5 +1,5 @@
-import React, { ReactNode } from 'react'
 import { Link } from '@inertiajs/inertia-react'
+import React, { ReactNode } from 'react'
 
 type NavLinkProps = {
   href: string

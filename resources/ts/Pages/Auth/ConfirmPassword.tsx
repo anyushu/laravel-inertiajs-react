@@ -1,11 +1,11 @@
+import { Head, useForm } from '@inertiajs/inertia-react'
 import React, { useEffect } from 'react'
+import route from 'ziggy-js'
 import Button from '@/Components/Button'
-import Guest from '@/Layouts/Guest'
 import Input from '@/Components/Input'
 import Label from '@/Components/Label'
 import ValidationErrors from '@/Components/ValidationErrors'
-import { Head, useForm } from '@inertiajs/inertia-react'
-import route from 'ziggy-js'
+import Guest from '@/Layouts/Guest'
 
 export default function ConfirmPassword() {
   const { data, setData, post, processing, errors, reset } = useForm({
@@ -46,14 +46,14 @@ export default function ConfirmPassword() {
             type="password"
             name="password"
             value={data.password}
-            className="mt-1 block w-full"
+            className="block mt-1 w-full"
             handleChange={onHandleChange}
             autoComplete=""
             required={true}
           />
         </div>
 
-        <div className="flex items-center justify-end mt-4">
+        <div className="flex justify-end items-center mt-4">
           <Button className="ml-4" processing={processing}>
             Confirm
           </Button>

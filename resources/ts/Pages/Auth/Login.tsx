@@ -1,12 +1,12 @@
+import { Head, Link, useForm } from '@inertiajs/inertia-react'
 import React, { useEffect } from 'react'
+import route from 'ziggy-js'
 import Button from '@/Components/Button'
 import Checkbox from '@/Components/Checkbox'
-import Guest from '@/Layouts/Guest'
 import Input from '@/Components/Input'
 import Label from '@/Components/Label'
 import ValidationErrors from '@/Components/ValidationErrors'
-import { Head, Link, useForm } from '@inertiajs/inertia-react'
-import route from 'ziggy-js'
+import Guest from '@/Layouts/Guest'
 
 const Login = ({ status, canResetPassword }) => {
   const { data, setData, post, processing, errors, reset } = useForm({
@@ -38,7 +38,7 @@ const Login = ({ status, canResetPassword }) => {
     <Guest>
       <Head title="Log in" />
 
-      {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
+      {status && <div className="mb-4 text-sm font-medium text-green-600">{status}</div>}
 
       <ValidationErrors errors={errors} />
 
@@ -50,7 +50,7 @@ const Login = ({ status, canResetPassword }) => {
             type="text"
             name="email"
             value={data.email}
-            className="mt-1 block w-full"
+            className="block mt-1 w-full"
             autoComplete="username"
             handleChange={onHandleChange}
             required={true}
@@ -64,7 +64,7 @@ const Login = ({ status, canResetPassword }) => {
             type="password"
             name="password"
             value={data.password}
-            className="mt-1 block w-full"
+            className="block mt-1 w-full"
             autoComplete="current-password"
             handleChange={onHandleChange}
             required={true}
@@ -79,11 +79,11 @@ const Login = ({ status, canResetPassword }) => {
           </label>
         </div>
 
-        <div className="flex items-center justify-end mt-4">
+        <div className="flex justify-end items-center mt-4">
           {canResetPassword && (
             <Link
               href={route('password.request')}
-              className="underline text-sm text-gray-600 hover:text-gray-900"
+              className="text-sm text-gray-600 hover:text-gray-900 underline"
             >
               Forgot your password?
             </Link>

@@ -1,5 +1,5 @@
-import React from 'react'
 import { Link } from '@inertiajs/inertia-react'
+import React from 'react'
 
 const ResponsiveNavLink = ({ method = 'get', as = 'a', href, active = false, children }) => {
   return (
