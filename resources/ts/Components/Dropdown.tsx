@@ -1,6 +1,6 @@
 import { Transition } from '@headlessui/react'
-import { Link } from '@inertiajs/inertia-react'
-import React, { useState, useContext, Dispatch, SetStateAction } from 'react'
+import { BaseInertiaLinkProps, Link } from '@inertiajs/inertia-react'
+import React, { useState, useContext, Dispatch, SetStateAction, ReactNode } from 'react'
 
 const DropDownContext = React.createContext(
   {} as {
@@ -10,7 +10,7 @@ const DropDownContext = React.createContext(
   },
 )
 
-const Dropdown = ({ children }) => {
+const Dropdown = ({ children }: { children: ReactNode }) => {
   const [open, setOpen] = useState(false)
 
   const toggleOpen = () => {
@@ -24,7 +24,7 @@ const Dropdown = ({ children }) => {
   )
 }
 
-const Trigger = ({ children }) => {
+const Trigger = ({ children }: { children: ReactNode }) => {
   const { open, setOpen, toggleOpen } = useContext(DropDownContext)
 
   return (
@@ -36,7 +36,19 @@ const Trigger = ({ children }) => {
   )
 }
 
-const Content = ({ align = 'right', width = '48', contentClasses = 'py-1 bg-white', children }) => {
+type ContentProps = {
+  align?: 'right' | 'left'
+  width?: string
+  contentClasses?: string
+  children: JSX.Element
+}
+
+const Content = ({
+  align = 'right',
+  width = '48',
+  contentClasses = 'py-1 bg-white',
+  children,
+}: ContentProps) => {
   const { open, setOpen } = useContext(DropDownContext)
 
   let alignmentClasses = 'origin-top'
@@ -79,7 +91,11 @@ const Content = ({ align = 'right', width = '48', contentClasses = 'py-1 bg-whit
   )
 }
 
-const DropdownLink = ({ href, method = 'post', as = 'a', children }) => {
+interface DropdownLinkProps extends BaseInertiaLinkProps {
+  children: ReactNode
+}
+
+const DropdownLink = ({ href, method = 'post', as = 'a', children }: DropdownLinkProps) => {
   return (
     <Link
       href={href}

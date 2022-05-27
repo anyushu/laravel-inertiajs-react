@@ -1,6 +1,18 @@
-import React, { InputHTMLAttributes, useEffect, useRef } from 'react'
+import React, { InputHTMLAttributes } from 'react'
 
-const Input = ({ type = 'text', name, value, className, autoComplete, required, handleChange }) => {
+interface InputPorps extends InputHTMLAttributes<HTMLInputElement> {
+  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+}
+
+const Input = ({
+  type = 'text',
+  name,
+  value,
+  className,
+  autoComplete,
+  required,
+  handleChange,
+}: InputPorps) => {
   return (
     <div className="flex flex-col items-start">
       <input

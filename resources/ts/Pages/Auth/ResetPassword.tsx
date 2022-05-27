@@ -7,7 +7,7 @@ import Label from '@/Components/Label'
 import ValidationErrors from '@/Components/ValidationErrors'
 import Guest from '@/Layouts/Guest'
 
-const ResetPassword = ({ token, email }) => {
+const ResetPassword = ({ token, email }: { token: string; email: string }) => {
   const { data, setData, post, processing, errors, reset } = useForm({
     token: token,
     email: email,

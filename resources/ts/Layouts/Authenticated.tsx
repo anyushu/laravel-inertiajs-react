@@ -1,12 +1,18 @@
 import { Link } from '@inertiajs/inertia-react'
-import React, { useState } from 'react'
+import React, { ReactNode, useState } from 'react'
 import route from 'ziggy-js'
 import ApplicationLogo from '@/Components/ApplicationLogo'
 import Dropdown from '@/Components/Dropdown'
 import NavLink from '@/Components/NavLink'
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink'
 
-const Authenticated = ({ auth, header, children }) => {
+type AuthenticatedProps = {
+  auth: { user: App.Models.User }
+  header?: ReactNode
+  children?: ReactNode
+}
+
+const Authenticated = ({ auth, header, children }: AuthenticatedProps) => {
   const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false)
 
   return (
@@ -104,7 +110,7 @@ const Authenticated = ({ auth, header, children }) => {
             </div>
 
             <div className="mt-3 space-y-1">
-              <ResponsiveNavLink method="post" href={route('logout')} as="button">
+              <ResponsiveNavLink method="post" href={route('logout')} as="button" active={false}>
                 Log Out
               </ResponsiveNavLink>
             </div>

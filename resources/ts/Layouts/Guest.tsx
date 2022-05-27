@@ -1,8 +1,12 @@
 import { Link } from '@inertiajs/inertia-react'
-import React from 'react'
+import React, { ReactNode } from 'react'
 import ApplicationLogo from '@/Components/ApplicationLogo'
 
-const Guest = ({ children }) => {
+type GuestProps = {
+  children?: ReactNode
+}
+
+const Guest = ({ children }: GuestProps) => {
   return (
     <div className="flex flex-col items-center pt-6 min-h-screen bg-gray-100 sm:justify-center sm:pt-0">
       <div>

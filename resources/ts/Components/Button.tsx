@@ -1,4 +1,4 @@
-import React, { ButtonHTMLAttributes, ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 
 type ButtonProps = {
   type?: 'button' | 'submit' | 'reset'

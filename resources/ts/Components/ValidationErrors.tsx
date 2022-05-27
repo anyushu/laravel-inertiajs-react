@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ValidationErrors = ({ errors }) => {
+const ValidationErrors = ({ errors }: { errors: Record<string, string> }) => {
   return Object.keys(errors).length > 0 ? (
     <div className="mb-4">
       <div className="font-medium text-red-600">Whoops! Something went wrong.</div>

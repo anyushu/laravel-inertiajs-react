@@ -1,8 +1,7 @@
-import { Link } from '@inertiajs/inertia-react'
+import { BaseInertiaLinkProps, Link } from '@inertiajs/inertia-react'
 import React, { ReactNode } from 'react'
 
-type NavLinkProps = {
-  href: string
+interface NavLinkProps extends BaseInertiaLinkProps {
   active?: boolean
   children: ReactNode
 }

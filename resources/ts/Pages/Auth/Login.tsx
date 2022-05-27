@@ -8,7 +8,7 @@ import Label from '@/Components/Label'
 import ValidationErrors from '@/Components/ValidationErrors'
 import Guest from '@/Layouts/Guest'
 
-const Login = ({ status, canResetPassword }) => {
+const Login = ({ status, canResetPassword }: { status: string; canResetPassword: boolean }) => {
   const { data, setData, post, processing, errors, reset } = useForm({
     email: '',
     password: '',

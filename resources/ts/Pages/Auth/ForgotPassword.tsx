@@ -6,16 +6,16 @@ import Input from '@/Components/Input'
 import ValidationErrors from '@/Components/ValidationErrors'
 import Guest from '@/Layouts/Guest'
 
-const ForgotPassword = ({ status }) => {
+const ForgotPassword = ({ status }: { status: string }) => {
   const { data, setData, post, processing, errors } = useForm({
     email: '',
   })
 
-  const onHandleChange = (event) => {
-    setData(event.target.name, event.target.value)
+  const onHandleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setData('email', event.target.value)
   }
 
-  const submit = (e) => {
+  const submit = (e: { preventDefault: () => void }) => {
     e.preventDefault()
 
     post(route('password.email'))

@@ -4,7 +4,7 @@ import route from 'ziggy-js'
 import Button from '@/Components/Button'
 import Guest from '@/Layouts/Guest'
 
-const VerifyEmail = ({ status }) => {
+const VerifyEmail = ({ status }: { status: string }) => {
   const { post, processing } = useForm()
 
   const submit = (e) => {
@@ -19,8 +19,8 @@ const VerifyEmail = ({ status }) => {
 
       <div className="mb-4 text-sm text-gray-600">
         Thanks for signing up! Before getting started, could you verify your email address by
-        clicking on the link we just emailed to you? If you didn't receive the email, we will gladly
-        send you another.
+        clicking on the link we just emailed to you? If you didn{"'"}t receive the email, we will
+        gladly send you another.
       </div>
 
       {status === 'verification-link-sent' && (

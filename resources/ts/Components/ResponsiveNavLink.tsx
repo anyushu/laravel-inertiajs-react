@@ -1,7 +1,18 @@
-import { Link } from '@inertiajs/inertia-react'
-import React from 'react'
+import { BaseInertiaLinkProps, Link } from '@inertiajs/inertia-react'
+import React, { ReactNode } from 'react'
 
-const ResponsiveNavLink = ({ method = 'get', as = 'a', href, active = false, children }) => {
+interface ResponsiveNavLinkProps extends BaseInertiaLinkProps {
+  active: boolean
+  children?: ReactNode
+}
+
+const ResponsiveNavLink = ({
+  method = 'get',
+  as = 'a',
+  href,
+  active = false,
+  children,
+}: ResponsiveNavLinkProps) => {
   return (
     <Link
       method={method}

@@ -1,9 +1,8 @@
-import React, { ReactNode } from 'react'
+import React, { LabelHTMLAttributes, ReactNode } from 'react'
 
-type LabelProps = {
+interface LabelProps extends LabelHTMLAttributes<HTMLLabelElement> {
   forInput: string
   value: string
-  className?: string
   children?: ReactNode
 }
 

@@ -2,8 +2,7 @@ import { Link, Head } from '@inertiajs/inertia-react'
 import React from 'react'
 import route from 'ziggy-js'
 
-const Welcome = (props) => {
-  console.log(props)
+const Welcome = (props: { auth: { user: App.Models.User } }) => {
   return (
     <>
       <Head title="Welcome" />
