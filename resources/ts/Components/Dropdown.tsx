@@ -1,12 +1,14 @@
-import React, { useState, useContext, Dispatch, SetStateAction } from 'react'
-import { Link } from '@inertiajs/inertia-react'
 import { Transition } from '@headlessui/react'
+import { Link } from '@inertiajs/inertia-react'
+import React, { useState, useContext, Dispatch, SetStateAction } from 'react'
 
-const DropDownContext = React.createContext({} as {
-  open: boolean
-  setOpen: Dispatch<SetStateAction<boolean>>
-  toggleOpen: () => void
-})
+const DropDownContext = React.createContext(
+  {} as {
+    open: boolean
+    setOpen: Dispatch<SetStateAction<boolean>>
+    toggleOpen: () => void
+  },
+)
 
 const Dropdown = ({ children }) => {
   const [open, setOpen] = useState(false)
@@ -83,7 +85,7 @@ const DropdownLink = ({ href, method = 'post', as = 'a', children }) => {
       href={href}
       method={method}
       as={as}
-      className="block w-full px-4 py-2 text-left text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out"
+      className="block py-2 px-4 w-full text-sm leading-5 text-left text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out"
     >
       {children}
     </Link>

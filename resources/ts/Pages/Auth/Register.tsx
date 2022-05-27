@@ -1,11 +1,11 @@
+import { Head, Link, useForm } from '@inertiajs/inertia-react'
 import React, { useEffect } from 'react'
+import route from 'ziggy-js'
 import Button from '@/Components/Button'
-import Guest from '@/Layouts/Guest'
 import Input from '@/Components/Input'
 import Label from '@/Components/Label'
 import ValidationErrors from '@/Components/ValidationErrors'
-import { Head, Link, useForm } from '@inertiajs/inertia-react'
-import route from 'ziggy-js'
+import Guest from '@/Layouts/Guest'
 
 const Register = () => {
   const { data, setData, post, processing, errors, reset } = useForm({
@@ -48,7 +48,7 @@ const Register = () => {
             type="text"
             name="name"
             value={data.name}
-            className="mt-1 block w-full"
+            className="block mt-1 w-full"
             autoComplete="name"
             handleChange={onHandleChange}
             required
@@ -62,7 +62,7 @@ const Register = () => {
             type="email"
             name="email"
             value={data.email}
-            className="mt-1 block w-full"
+            className="block mt-1 w-full"
             autoComplete="username"
             handleChange={onHandleChange}
             required={true}
@@ -76,7 +76,7 @@ const Register = () => {
             type="password"
             name="password"
             value={data.password}
-            className="mt-1 block w-full"
+            className="block mt-1 w-full"
             autoComplete="new-password"
             handleChange={onHandleChange}
             required={true}
@@ -90,17 +90,17 @@ const Register = () => {
             type="password"
             name="password_confirmation"
             value={data.password_confirmation}
-            className="mt-1 block w-full"
+            className="block mt-1 w-full"
             handleChange={onHandleChange}
             autoComplete=""
             required={true}
           />
         </div>
 
-        <div className="flex items-center justify-end mt-4">
+        <div className="flex justify-end items-center mt-4">
           <Link
             href={route('login')}
-            className="underline text-sm text-gray-600 hover:text-gray-900"
+            className="text-sm text-gray-600 hover:text-gray-900 underline"
           >
             Already registered?
           </Link>
