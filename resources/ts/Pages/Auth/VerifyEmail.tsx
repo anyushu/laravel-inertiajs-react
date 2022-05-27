@@ -2,8 +2,9 @@ import React from 'react'
 import Button from '@/Components/Button'
 import Guest from '@/Layouts/Guest'
 import { Head, Link, useForm } from '@inertiajs/inertia-react'
+import route from 'ziggy-js'
 
-export default function VerifyEmail({ status }) {
+const VerifyEmail = ({ status }) => {
   const { post, processing } = useForm()
 
   const submit = (e) => {
@@ -46,3 +47,5 @@ export default function VerifyEmail({ status }) {
     </Guest>
   )
 }
+
+export default VerifyEmail

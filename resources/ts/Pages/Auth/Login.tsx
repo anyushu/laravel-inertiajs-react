@@ -6,8 +6,9 @@ import Input from '@/Components/Input'
 import Label from '@/Components/Label'
 import ValidationErrors from '@/Components/ValidationErrors'
 import { Head, Link, useForm } from '@inertiajs/inertia-react'
+import route from 'ziggy-js'
 
-export default function Login({ status, canResetPassword }) {
+const Login = ({ status, canResetPassword }) => {
   const { data, setData, post, processing, errors, reset } = useForm({
     email: '',
     password: '',
@@ -51,8 +52,8 @@ export default function Login({ status, canResetPassword }) {
             value={data.email}
             className="mt-1 block w-full"
             autoComplete="username"
-            isFocused={true}
             handleChange={onHandleChange}
+            required={true}
           />
         </div>
 
@@ -66,6 +67,7 @@ export default function Login({ status, canResetPassword }) {
             className="mt-1 block w-full"
             autoComplete="current-password"
             handleChange={onHandleChange}
+            required={true}
           />
         </div>
 
@@ -95,3 +97,5 @@ export default function Login({ status, canResetPassword }) {
     </Guest>
   )
 }
+
+export default Login

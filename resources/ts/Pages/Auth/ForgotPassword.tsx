@@ -4,8 +4,9 @@ import Guest from '@/Layouts/Guest'
 import Input from '@/Components/Input'
 import ValidationErrors from '@/Components/ValidationErrors'
 import { Head, useForm } from '@inertiajs/inertia-react'
+import route from 'ziggy-js'
 
-export default function ForgotPassword({ status }) {
+const ForgotPassword = ({ status }) => {
   const { data, setData, post, processing, errors } = useForm({
     email: '',
   })
@@ -39,8 +40,9 @@ export default function ForgotPassword({ status }) {
           name="email"
           value={data.email}
           className="mt-1 block w-full"
-          isFocused={true}
           handleChange={onHandleChange}
+          autoComplete=""
+          required={true}
         />
 
         <div className="flex items-center justify-end mt-4">
@@ -52,3 +54,5 @@ export default function ForgotPassword({ status }) {
     </Guest>
   )
 }
+
+export default ForgotPassword

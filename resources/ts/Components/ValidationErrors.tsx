@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default function ValidationErrors({ errors }) {
+const ValidationErrors = ({ errors }) => {
   return (
-    Object.keys(errors).length > 0 && (
+    Object.keys(errors).length > 0 ? (
       <div className="mb-4">
         <div className="font-medium text-red-600">Whoops! Something went wrong.</div>
 
@@ -12,6 +12,8 @@ export default function ValidationErrors({ errors }) {
           })}
         </ul>
       </div>
-    )
+    ): <></>
   )
 }
+
+export default ValidationErrors
