@@ -11,12 +11,23 @@ module.exports = {
   ],
 
   theme: {
+    container: {
+      center: true,
+      padding: '1.5rem',
+    },
     extend: {
       fontFamily: {
         sans: ['Nunito', ...defaultTheme.fontFamily.sans],
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            'max-width': '100%',
+          },
+        },
+      },
     },
   },
 
-  plugins: [require('@tailwindcss/forms')],
+  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
 }
