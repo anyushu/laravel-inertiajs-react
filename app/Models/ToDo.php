@@ -15,6 +15,17 @@ class ToDo extends Model
     protected $table = 'to_dos';
 
     /**
+     * @var array
+     */
+    protected $fillable = [
+        'user_id',
+        'to_do_status_id',
+        'title',
+        'description',
+        'deadline',
+    ];
+
+    /**
      * User
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

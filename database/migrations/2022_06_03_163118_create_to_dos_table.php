@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('to_dos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->nullable()->constrained('users')->onUpdate('cascade');
+            $table->foreignId('user_id')->constrained('users')->onUpdate('cascade');
             $table->foreignId('to_do_status_id')->nullable()->constrained('to_do_statuses')->onUpdate('cascade');
             $table->string('title');
             $table->text('description')->nullable();

@@ -44,7 +44,7 @@ const Login = ({ status, canResetPassword }: { status: string; canResetPassword:
 
       <form onSubmit={submit}>
         <div>
-          <Label forInput="email" value="Email" />
+          <Label forInput="email" value="メールアドレス" />
 
           <Input
             type="text"
@@ -58,7 +58,7 @@ const Login = ({ status, canResetPassword }: { status: string; canResetPassword:
         </div>
 
         <div className="mt-4">
-          <Label forInput="password" value="Password" />
+          <Label forInput="password" value="パスワード" />
 
           <Input
             type="password"
@@ -75,7 +75,7 @@ const Login = ({ status, canResetPassword }: { status: string; canResetPassword:
           <label className="flex items-center">
             <Checkbox name="remember" value={data.remember} handleChange={onHandleChange} />
 
-            <span className="ml-2 text-sm text-gray-600">Remember me</span>
+            <span className="ml-2 text-sm text-gray-600">ログインを保持する</span>
           </label>
         </div>
 
@@ -85,12 +85,19 @@ const Login = ({ status, canResetPassword }: { status: string; canResetPassword:
               href={route('password.request')}
               className="text-sm text-gray-600 hover:text-gray-900 underline"
             >
-              Forgot your password?
+              パスワードを忘れた
             </Link>
           )}
 
+          <Link
+            href={route('register')}
+            className="ml-auto text-sm text-gray-600 hover:text-gray-900 underline"
+          >
+            新規登録
+          </Link>
+
           <Button className="ml-4" processing={processing}>
-            Log in
+            ログイン
           </Button>
         </div>
       </form>

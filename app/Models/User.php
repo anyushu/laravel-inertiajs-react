@@ -44,6 +44,16 @@ class User extends Authenticatable
     ];
 
     /**
+     * ToDoStatus
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function toDoStatuses()
+    {
+        return $this->hasMany(ToDoStatus::class);
+    }
+
+    /**
      * ToDo
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

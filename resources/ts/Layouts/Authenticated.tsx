@@ -1,7 +1,5 @@
-import { Link } from '@inertiajs/inertia-react'
 import React, { ReactNode, useState } from 'react'
 import route from 'ziggy-js'
-import ApplicationLogo from '@/Components/ApplicationLogo'
 import Dropdown from '@/Components/Dropdown'
 import NavLink from '@/Components/NavLink'
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink'
@@ -18,15 +16,9 @@ const Authenticated = ({ auth, header, children }: AuthenticatedProps) => {
   return (
     <div className="min-h-screen bg-gray-100">
       <nav className="bg-white border-b border-gray-100">
-        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div className="pr-4 mx-auto max-w-7xl sm:pr-6 lg:pr-8">
           <div className="flex justify-between h-16">
             <div className="flex">
-              <div className="flex shrink-0 items-center">
-                <Link href="/">
-                  <ApplicationLogo className="block w-auto h-9 text-gray-500" />
-                </Link>
-              </div>
-
               <div className="hidden space-x-8 sm:flex sm:-my-px sm:ml-10">
                 <NavLink href={route('dashboard')} active={route().current('dashboard')}>
                   Dashboard

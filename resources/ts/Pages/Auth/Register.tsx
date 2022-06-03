@@ -42,7 +42,7 @@ const Register = () => {
 
       <form onSubmit={submit}>
         <div>
-          <Label forInput="name" value="Name" />
+          <Label forInput="name" value="なまえ" />
 
           <Input
             type="text"
@@ -56,7 +56,7 @@ const Register = () => {
         </div>
 
         <div className="mt-4">
-          <Label forInput="email" value="Email" />
+          <Label forInput="email" value="メールアドレス" />
 
           <Input
             type="email"
@@ -70,7 +70,7 @@ const Register = () => {
         </div>
 
         <div className="mt-4">
-          <Label forInput="password" value="Password" />
+          <Label forInput="password" value="パスワード" />
 
           <Input
             type="password"
@@ -84,7 +84,7 @@ const Register = () => {
         </div>
 
         <div className="mt-4">
-          <Label forInput="password_confirmation" value="Confirm Password" />
+          <Label forInput="password_confirmation" value="パスワード確認" />
 
           <Input
             type="password"
@@ -102,11 +102,11 @@ const Register = () => {
             href={route('login')}
             className="text-sm text-gray-600 hover:text-gray-900 underline"
           >
-            Already registered?
+            すでに登録済みですか？
           </Link>
 
           <Button className="ml-4" processing={processing}>
-            Register
+            登録
           </Button>
         </div>
       </form>
