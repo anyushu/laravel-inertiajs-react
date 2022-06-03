@@ -4703,7 +4703,7 @@ var Trigger = function Trigger(_a) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement((react__WEBPACK_IMPORTED_MODULE_1___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
     onClick: toggleOpen
   }, children), open && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
-    className: "fixed inset-0 z-40",
+    className: "",
     onClick: function onClick() {
       return setOpen(false);
     }
@@ -5796,7 +5796,11 @@ var Welcome = function Welcome(props) {
   }, "Log in"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
     href: ziggy_js__WEBPACK_IMPORTED_MODULE_2___default()('register'),
     className: "ml-4 text-sm text-gray-700 underline"
-  }, "Register"))));
+  }, "Register"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
+    className: "container py-24"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
+    className: "prose"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("table", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("th", null, "Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("th", null, "Value"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("tbody", null)))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Welcome);

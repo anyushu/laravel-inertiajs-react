@@ -31,7 +31,7 @@ const Trigger = ({ children }: { children: ReactNode }) => {
     <>
       <div onClick={toggleOpen}>{children}</div>
 
-      {open && <div className="fixed inset-0 z-40" onClick={() => setOpen(false)}></div>}
+      {open && <div className="" onClick={() => setOpen(false)}></div>}
     </>
   )
 }
