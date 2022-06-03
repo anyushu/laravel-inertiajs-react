@@ -42,4 +42,24 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * ToDo
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function toDos()
+    {
+        return $this->hasMany(ToDo::class);
+    }
+
+    /**
+     * 削除済みToDo
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function deletedToDos()
+    {
+        return $this->hasMany(DeletedToDos::class);
+    }
 }

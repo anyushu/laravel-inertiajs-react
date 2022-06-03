@@ -15,6 +15,16 @@ class DeletedToDo extends Model
     protected $table = 'deleted_to_dos';
 
     /**
+     * User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    /**
      * ToDoステータス
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
